@@ -1,0 +1,17 @@
+{
+  "name": "Florilegium Biblia",
+  "short_name": "Biblia",
+  "description": "The original Douay-Rheims Bible of 1582–1610, with notes and annotations.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#070606",
+  "theme_color": "#070606",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

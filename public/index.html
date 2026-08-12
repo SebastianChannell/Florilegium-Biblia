@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#070606">
+    <meta name="color-scheme" content="dark">
+    <meta
+      name="description"
+      content="The original Douay-Rheims Bible of 1582–1610, with its notes and annotations."
+    >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Biblia — Sacrum Florilegium</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to Scripture</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="Biblia home">
+          <span>Sacrum Florilegium</span>
+          <strong>Biblia</strong>
+        </a>
+        <p class="subtitle" lang="la">Verbum Dómini manet in ætérnum.</p>
+
+        <nav class="view-switcher" aria-label="Library sections">
+          <a id="scripture-link" class="view-link is-active" href="./" aria-current="page">Scripture</a>
+          <a id="reference-link" class="view-link" href="?view=apparatus">Original apparatus</a>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section id="scripture-view" aria-labelledby="chapter-title">
+          <nav class="chapter-toolbar" aria-label="Chapter navigation">
+            <button id="previous-chapter" class="chapter-arrow" type="button" aria-label="Previous chapter">←</button>
+
+            <div class="chapter-selectors">
+              <label class="selector">
+                <span class="visually-hidden">Book</span>
+                <select id="book-select" aria-label="Choose a book"></select>
+              </label>
+              <label class="selector selector-chapter">
+                <span class="visually-hidden">Chapter</span>
+                <select id="chapter-select" aria-label="Choose a chapter"></select>
+              </label>
+            </div>
+
+            <button id="next-chapter" class="chapter-arrow" type="button" aria-label="Next chapter">→</button>
+          </nav>
+
+          <div id="reader-status" class="reader-status" role="status" aria-live="polite">Loading Scripture…</div>
+
+          <article id="chapter-reader" class="chapter-reader" hidden>
+            <header class="chapter-header">
+              <p id="testament-label" class="eyebrow"></p>
+              <h1 id="chapter-title" tabindex="-1"></h1>
+              <p id="chapter-label" class="chapter-label"></p>
+            </header>
+
+            <details id="book-introduction" class="book-introduction" hidden>
+              <summary>Introduction to this book</summary>
+              <div id="book-introduction-text" class="introduction-text"></div>
+            </details>
+
+            <section id="chapter-summary" class="chapter-summary" aria-label="Chapter summary" hidden>
+              <div id="chapter-summary-text"></div>
+              <div id="chapter-summary-notes" class="summary-notes"></div>
+            </section>
+
+            <div id="note-legend" class="note-legend" hidden>
+              <span><i class="legend-mark note-mark" aria-hidden="true"></i> Translator note</span>
+              <span><i class="legend-mark annotation-mark" aria-hidden="true"></i> Annotation</span>
+            </div>
+
+            <div id="verses" class="verses"></div>
+
+            <section id="chapter-notes" class="chapter-notes" aria-labelledby="notes-heading" hidden>
+              <div class="section-heading">
+                <p class="eyebrow">After the sacred text</p>
+                <h2 id="notes-heading">Notes &amp; annotations</h2>
+              </div>
+              <p class="notes-introduction">
+                The original translators’ brief notes and their fuller annotations, arranged by verse.
+              </p>
+              <div id="notes-list" class="notes-list"></div>
+            </section>
+
+            <nav class="chapter-footer-nav" aria-label="Continue reading">
+              <a id="previous-link" class="chapter-footer-link" href="#">
+                <span>Previous</span>
+                <strong></strong>
+              </a>
+              <a id="next-link" class="chapter-footer-link is-next" href="#">
+                <span>Next</span>
+                <strong></strong>
+              </a>
+            </nav>
+
+            <details class="downloads">
+              <summary>Text files for this book</summary>
+              <div id="download-links" class="download-links"></div>
+            </details>
+          </article>
+        </section>
+
+        <section id="apparatus-view" class="apparatus-view" aria-labelledby="apparatus-heading" hidden>
+          <header class="apparatus-header">
+            <p class="eyebrow">The original editions</p>
+            <h1 id="apparatus-heading">Prefaces &amp; reference matter</h1>
+            <p>
+              Title pages, prefaces, approbations, doctrinal tables, and other material printed with the
+              1582 New Testament and 1609 Old Testament.
+            </p>
+          </header>
+
+          <label class="apparatus-selector">
+            <span>Choose a document</span>
+            <select id="reference-select"></select>
+          </label>
+
+          <div id="reference-status" class="reader-status" role="status" aria-live="polite"></div>
+          <article id="reference-reader" class="reference-reader" hidden></article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span aria-hidden="true">✠</span>
+        <span>T.A.D.M.N.</span>
+      </footer>
+    </div>
+
+    <dialog id="note-dialog" class="note-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <header class="dialog-header">
+          <div>
+            <p id="dialog-reference" class="eyebrow"></p>
+            <h2 id="dialog-title">Notes &amp; annotations</h2>
+          </div>
+          <button id="close-dialog" class="dialog-close" type="button" aria-label="Close notes">×</button>
+        </header>
+        <div id="dialog-content" class="dialog-content" tabindex="0"></div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">JavaScript is required to open the Bible text and its annotations.</p>
+    </noscript>
+  </body>
+</html>

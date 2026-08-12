@@ -1,4 +1,50 @@
-# Original Douay-Rheims Bible — JSON Dataset
+# Florilegium Biblia
+
+A quiet, mobile-first reader for the original pre-Challoner Douay-Rheims Bible
+of 1582–1610. The reader keeps the sacred text visually primary while making
+the original translators' notes and fuller annotations easy to recognize and
+open.
+
+## Reader features
+
+- The complete 73-book Catholic canon, followed by 3 Esdras, 4 Esdras, and the
+  Prayer of Manasses in an appendix.
+- A compact native book and chapter selector designed to work especially well
+  on iPhone.
+- Distinct note and annotation markers wherever apparatus is available.
+- A tap-friendly reading sheet for each verse's notes and annotations.
+- A complete notes-and-annotations section after every chapter.
+- Book introductions, chapter summaries, and the original 1582/1609 title
+  pages, prefaces, approbations, glossaries, and doctrinal tables.
+- Download links for each book in tagged JSON, plain JSON, and USFM.
+- Shareable chapter URLs, last-location memory, and an installable offline app
+  shell that caches chapters as they are read.
+- The established Sacrum Florilegium palette and typography: near-black
+  `#070606`, purple `#8451CF`, restrained gold, and a generous serif reading
+  measure.
+
+Cross-references remain in the source data and downloads, but are intentionally
+omitted from the reading interface so the original notes and annotations have
+greater prominence.
+
+## Build and verify
+
+Requires Node.js 20 or newer. There are no runtime or build dependencies.
+
+```sh
+npm run check
+npm run dev
+```
+
+The production site is written to `dist/`. For Cloudflare Pages, use
+`npm run build` as the build command and `dist` as the output directory.
+
+The build validates the book order and text markup, generates the complete
+catalog, copies the reader data and download formats, and safely rejoins a few
+page-continuation fragments that were assigned impossible verse numbers in the
+upstream extraction. The imported source files themselves remain unchanged.
+
+## Source dataset
 
 The complete text of the Original Douay-Rheims Bible (Old Testament 1609, New
 Testament 1582) in structured JSON, with footnotes, cross-references,
@@ -126,4 +172,5 @@ The 73 books of the Catholic canon, including the deuterocanonical books
 
 ## Related
 
-- [Original Douay-Rheims Bible](https://odr.app) — web reader built on this data
+- [Source dataset](https://github.com/janvier-s/original-douay-rheims)
+- [The Original Douay-Rheims](https://thedouayrheims.com)
