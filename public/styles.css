@@ -365,11 +365,8 @@ a {
 
 .chapter-summary {
   margin: 2rem 0 0;
-  padding: 1.15rem 1.2rem;
-  border-left: 2px solid var(--accent);
-  border-radius: 0 0.4rem 0.4rem 0;
-  background: var(--accent-soft);
-  color: #c9c3bd;
+  padding: 0;
+  color: var(--accent-bright);
   font-family: var(--serif);
   font-size: 0.98rem;
   font-style: italic;
@@ -382,11 +379,10 @@ a {
 
 .summary-notes {
   margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(132, 81, 207, 0.26);
-  color: var(--muted);
+  padding-top: 0;
+  color: var(--accent-bright);
   font-size: 0.84rem;
-  font-style: normal;
+  font-style: italic;
 }
 
 .summary-note {
@@ -431,14 +427,14 @@ a {
 }
 
 .verses {
-  margin-top: 2rem;
+  margin: 2rem -0.5rem 0;
   font-family: var(--serif);
 }
 
 .verse {
   display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  column-gap: 0.45rem;
+  grid-template-columns: 1.7rem minmax(0, 1fr);
+  column-gap: 0.35rem;
   margin: 0 0 0.76rem;
   scroll-margin-top: 5.5rem;
 }
